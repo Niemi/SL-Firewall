@@ -1,0 +1,2 @@
+iptables-save > /somepalce/scriptname
+iptables-restorew < /someplace/scriptname
