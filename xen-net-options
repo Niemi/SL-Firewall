@@ -1,0 +1,69 @@
+tk-xen1:/home/edss # cat /etc/sysconfig/network/
+config            ifcfg-br20        ifcfg-eth1        ifcfg-eth5        ifcfg-vlan20      ifroute-lo        routes.YaST2save  
+dhcp              ifcfg-br21        ifcfg-eth2        ifcfg-lo          ifcfg-vlan21      if-up.d/          scripts/          
+ifcfg-bond0       ifcfg-br32        ifcfg-eth3        ifcfg.template    ifcfg-vlan32      providers/        
+ifcfg-br1000      ifcfg-eth0        ifcfg-eth4        ifcfg-vlan1000    if-down.d/        routes            
+tk-xen1:/home/edss # cat /etc/sysconfig/network/ifcfg-eth2
+BOOTPROTO='none'
+BROADCAST=''
+ETHTOOL_OPTIONS=''
+IPADDR=''
+MTU='9000'
+NAME='82576 Gigabit Network Connection'
+NETMASK=''
+NETWORK=''
+REMOTE_IPADDR=''
+STARTMODE='auto'
+USERCONTROL='no'
+tk-xen1:/home/edss # cat /etc/sysconfig/network/ifcfg-bond0
+BONDING_MASTER='yes'
+BONDING_MODULE_OPTS='mode=802.3ad miimon=100'
+BONDING_SLAVE0='eth2'
+BONDING_SLAVE1='eth3'
+BONDING_SLAVE2='eth4'
+BONDING_SLAVE3='eth5'
+BOOTPROTO='static'
+BROADCAST=''
+ETHTOOL_OPTIONS=''
+IPADDR=''
+MTU='9000'
+NAME=''
+NETMASK=''
+NETWORK=''
+REMOTE_IPADDR=''
+STARTMODE='hotplug'
+USERCONTROL='no'
+tk-xen1:/home/edss # cat /etc/sysconfig/network/ifcfg-
+ifcfg-bond0     ifcfg-br20      ifcfg-br32      ifcfg-eth1      ifcfg-eth3      ifcfg-eth5      ifcfg-vlan1000  ifcfg-vlan21    
+ifcfg-br1000    ifcfg-br21      ifcfg-eth0      ifcfg-eth2      ifcfg-eth4      ifcfg-lo        ifcfg-vlan20    ifcfg-vlan32    
+tk-xen1:/home/edss # cat /etc/sysconfig/network/ifcfg-vlan1000
+BOOTPROTO='static'
+BROADCAST=''
+ETHERDEVICE='bond0'
+ETHTOOL_OPTIONS=''
+IPADDR=''
+MTU='9000'
+NAME=''
+NETMASK=''
+NETWORK=''
+REMOTE_IPADDR=''
+STARTMODE='hotplug'
+USERCONTROL='no'
+VLAN_ID='1000'
+tk-xen1:/home/edss # cat /etc/sysconfig/network/ifcfg-br1000
+BOOTPROTO='none'
+BRIDGE='yes'
+BRIDGE_FORWARDDELAY='0'
+BRIDGE_PORTS='vlan1000'
+BRIDGE_STP='off'
+BROADCAST=''
+ETHTOOL_OPTIONS=''
+IPADDR=''
+MTU='9000'
+NAME=''
+NETMASK=''
+NETWORK=''
+REMOTE_IPADDR=''
+STARTMODE='hotplug'
+USERCONTROL='no'
+tk-xen1:/home/edss # exit

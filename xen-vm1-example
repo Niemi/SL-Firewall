@@ -1,0 +1,20 @@
+cat /storage/images/mct-app1.mct.edss.ee/mct-app1.mct.edss.ee.xl
+name="mct-app1.mct.edss.ee"
+maxmem = 8000
+memory = 4000
+vcpus = 8
+maxvcpus = 16
+weight = 256
+bootloader = "/usr/bin/pygrub"
+bootargs = "--entry=xvda1:/boot/vmlinuz-xen,/boot/initrd-xen"
+extra = " "
+on_poweroff = "destroy"
+on_reboot = "restart"
+on_crash = "restart"
+on_xend_start = "start"
+on_xend_stop = "shutdown"
+disk=[ 
+"tap:raw:/storage/images/mct-app1.mct.edss.ee/mct-app1.mct.edss.ee_system.raw,xvda,w", 
+"tap:raw:/storage/images/mct-app1.mct.edss.ee/mct-app1.mct.edss.ee_web.raw,xvdb,w", 
+]
+vif =[ "mac=00:00:0A:64:5A:0B,bridge=br1000,mtu=9000"]
